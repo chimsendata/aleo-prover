@@ -89,7 +89,7 @@ pub fn start(prover_sender: Arc<Sender<ProverEvent>>, client: Arc<DirectClient>)
 
         // incoming socket
         task::spawn(async move {
-            let (_, listener) = match TcpListener::bind("0.0.0.0:4140").await {
+            let (_, listener) = match TcpListener::bind("0.0.0.0:4141").await {
                 Ok(listener) => {
                     let local_ip = listener.local_addr().expect("Could not get local ip");
                     info!("Listening on {}", local_ip);
